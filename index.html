@@ -9,7 +9,7 @@
     <script>
         console.log(navigator);
         var para = document.createElement("p");
-        var node = document.createTextNode(navigator.platform);
+        var node = document.createTextNode(navigator.appVersion);
         para.appendChild(node);
         var element = document.getElementById("div1");
         element.appendChild(para);
