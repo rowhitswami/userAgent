@@ -7,49 +7,12 @@
 <body>
     <div id="div1"></div>
     <script>
-        function getMobileOperatingSystem() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-            // Windows Phone must come first because its UA also contains "Android"
-            if (/windows phone/i.test(userAgent)) {
-                var phone = "Windows";
-                var para = document.createElement("p");
-                var node = document.createTextNode(phone);
-                para.appendChild(node);
-                var element = document.getElementById("div1");
-                element.appendChild(para);
-                return "Windows Phone";
-            }
-
-            if (/android/i.test(userAgent)) {
-                var phone = "Android";
-                var para = document.createElement("p");
-                var node = document.createTextNode(phone);
-                para.appendChild(node);
-                var element = document.getElementById("div1");
-                element.appendChild(para);
-                return "Android";
-            }
-
-            // iOS detection from: http://stackoverflow.com/a/9039885/177710
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                var phone = "iOS";
-                var para = document.createElement("p");
-                var node = document.createTextNode(phone);
-                para.appendChild(node);
-                var element = document.getElementById("div1");
-                element.appendChild(para);
-                return "iOS";
-            }
-
-            var phone = "Unknown";
-            var para = document.createElement("p");
-            var node = document.createTextNode(phone);
-            para.appendChild(node);
-            var element = document.getElementById("div1");
-            element.appendChild(para);
-            return "unknown";
-        }
+        console.log(navigator);
+        var para = document.createElement("p");
+        var node = document.createTextNode(navigator.platform);
+        para.appendChild(node);
+        var element = document.getElementById("div1");
+        element.appendChild(para);
     </script>
 </body>
 
